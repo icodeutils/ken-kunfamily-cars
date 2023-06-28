@@ -1,6 +1,43 @@
 {
-    "message": {
-      "greeting": "Xin chào!"
-    }
+  "common": {
+    "pageIntroduce": "Chào mừng đến với Việt Nam - một quốc gia đa dạng và hấp dẫn cho khách du lịch. Với thủ đô sôi động Hồ Chí Minh, vùng nông thôn tươi đẹp Lâm Đồng và bờ biển tuyệt vời của Vũng Tàu, Việt Nam đem đến những trải nghiệm đặc biệt và không thể quên. Hãy cùng nhau khám phá với Ken Kun Family's Cars",
+    "dayTourText": "Du lịch trong ngày",
+    "multipleDayTourText": "Du lịch nhiều ngày",
+    "signUpBtn": "Đăng ký",
+    "layoutTitle1": "Hành trình",
+    "layoutTitle2": "Khám phá",
+    "layoutTitle3": "Việt Nam",
+    "discover": "Khám phá ngay",
+
+    "formScheduleTitle": "Lịch trình của bạn",
+    "formPickupTitle": "Điểm đón",
+    "formPauseOptionTitle": "Điểm dừng tùy chọn",
+    "formDestinationTitle": "Điểm đến",
+    "formPickupPlaceholder": "Nhập địa điểm đón của bạn",
+    "formPauseLocationPlaceholder": "Nhập địa điểm dừng của bạn",
+    "formDestinationLocationPlaceholder": "Nhập địa điểm đến của bạn",
+    "formServiceTypeTitle": "Loại dịch vụ",
+    "formServiceTypeOption1": "01 chiều liên tỉnh",
+    "formServiceTypeOption2": "02 chiều xe theo phục vụ",
+    "formTransportTypeTitle": "Loại phương tiện di chuyển",
+    "formTransportTypeOption4": "Xe ô tô 4 chỗ",
+    "formTransportTypeOption7": "Xe ô tô 7 chỗ",
+    "formTimePickupTitle": "Thời gian đón",
+    "letsGoBtnTitle": "Bắt đầu hành trình",
+    "whereDoYouWantToExplore": "Bạn muốn\nkhám phá ở đâu?",
+    "explorePointTitle": "Khám phá các địa điểm ưa thích\nkhác nhau ở Việt Nam",
+    "phoneNumberText": "Số điện thoại: 084.666.888.3",
+    "addressText": "Địa chỉ: 1673 Phạm Thế Hiển, Phường 6, Quận 8, Thành phố Hồ Chí Minh",
+    "dialogBookingTitle": "Thông tin chi tiết hành trình",
+    "dialogDistanceInfoText": "Quãng đường di chuyển",
+    "totalFee": "Tổng chi phí",
+    "dialogFullnameText": "Thông tin họ tên",
+    "dialogFullnamePlaceholderText": "Nhập thông tin họ tên",
+    "dialogPhoneNumberText": "Thông tin số điện thoại",
+    "dialogPhoneNumberPlaceholderText": "Nhập thông tin số điện thoại",
+    "dialogBookingBtn": "Đặt lịch trình",
+    "dialogBookingSuccessText": "Đặt xe thành công.Cảm ơn quý khách, chúng tôi sẽ liên hệ bạn ngay!",
+    "dialogRequiredFullNameText": "Vui lòng nhập thông tin họ tên.",
+    "dialogRequiredPhoneNumberText": "Vui lòng nhập thông tin số điện thoại."
   }
-  
+}

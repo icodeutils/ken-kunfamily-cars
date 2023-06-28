@@ -14,7 +14,7 @@ i18n
       escapeValue: false,
     },
     backend: {
-      loadPath: "src/translations/{{lng}}.json", // Specify the path pattern for loading translation files
+      loadPath: "/locales/{{lng}}/translation.json", // Specify the path pattern for loading translation files
     },
   });
 

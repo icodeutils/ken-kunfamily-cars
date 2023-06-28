@@ -1,6 +1,42 @@
 {
-    "message": {
-      "greeting": "Hello!"
-    }
+  "common": {
+    "pageIntroduce": "Welcome to Vietnam - a diverse and fascinating country for tourists. With the vibrant capital Ho Chi Minh, the beautiful countryside of Lam Dong and the wonderful coastline of Vung Tau, Vietnam offers special and unforgettable experiences. Let's explore together with Ken Kun Family's Cars.",
+    "dayTourText": "Day tours",
+    "multipleDayTourText": "Multi-Day tours",
+    "signUpBtn": "Sign Up",
+    "layoutTitle1": "Journey",
+    "layoutTitle2": "Discover",
+    "layoutTitle3": "Việt Nam",
+    "discover": "Discover now",
+    "formScheduleTitle": "Your schedule",
+    "formPickupTitle": "Pick up location",
+    "formPauseOptionTitle": "Optional location breakpoint",
+    "formDestinationTitle": "Destination location",
+    "formPickupPlaceholder": "Enter your pickup location",
+    "formPauseLocationPlaceholder": "Enter your pause location",
+    "formDestinationLocationPlaceholder": "Enter your destination location",
+    "formServiceTypeTitle": "Service Type",
+    "formServiceTypeOption1": "01 way intercity",
+    "formServiceTypeOption2": "two-way service by service",
+    "formTransportTypeTitle": "Transport Type",
+    "formTransportTypeOption4": "4-seat car",
+    "formTransportTypeOption7": "7-seat car",
+    "formTimePickupTitle": "Pick up time",
+    "letsGoBtnTitle": "Start the journey",
+    "whereDoYouWantToExplore": "Where do you\nwant to explore ?",
+    "explorePointTitle": "Explore points of interest in\nvarious places around in Việt Nam",
+    "phoneNumberText": "Phone number: 084.666.888.3",
+    "addressText": "Address: 1673 Pham The Hien, Ward 6, District 8, Ho Chi Minh City Bright",
+    "dialogBookingTitle": "Detailed itinerary",
+    "dialogDistanceInfoText": "Travel distance",
+    "totalFee": "Total cost",
+    "dialogFullnameText": "Name information",
+    "dialogFullnamePlaceholderText": "Enter full name",
+    "dialogPhoneNumberText": "Phone number information",
+    "dialogPhoneNumberPlaceholderText": "Enter phone number information",
+    "dialogBookingBtn": "Booking a schedule",
+    "dialogBookingSuccessText": "Successful booking. Thank you, we will contact you shortly!",
+    "dialogRequiredFullNameText": "Please enter your first and last name.",
+    "dialogRequiredPhoneNumberText": "Please enter phone number information."
   }
-  
+}
