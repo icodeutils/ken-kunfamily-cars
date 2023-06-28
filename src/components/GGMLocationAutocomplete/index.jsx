@@ -39,6 +39,9 @@ export default function GGMLocationAutocomplete({ type, hookForm: { register }, 
       sx={{
         backgroundColor: "#ffffff",
         borderRadius: "30px",
+        "& > .Mui-focused": {
+          borderColor: 'red'
+        }
       }}
       placeholder={
         type === "origin"
