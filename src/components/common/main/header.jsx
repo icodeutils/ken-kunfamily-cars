@@ -25,7 +25,7 @@ const MainHeader = () => {
           justifyContent: "space-between",
           alignItems: "center",
           py: 1,
-          px: 4,
+          px: isDesktop ? 4 : 3,
         }}
       >
         <Box sx={{ display: "inherit" }}>
