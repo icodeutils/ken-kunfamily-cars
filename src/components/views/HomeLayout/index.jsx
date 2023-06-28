@@ -270,7 +270,7 @@ const HomeLayout = () => {
           />
         </Box>
       </Box>
-      <Container sx={{ zIndex: 3, mx: isDesktop ? 0 : -2, p: 0 }}>
+      <Container sx={{ zIndex: 5, mx: isDesktop ? 0 : -2, p: 0 }}>
         <Box mt={isDesktop ? -5 : -15}>
           <Card sx={{ p: 2, backgroundColor: "#163c4557", color: "#fff", width: '100%' }}>
             <Box mb={4}>
