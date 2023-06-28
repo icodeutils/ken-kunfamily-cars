@@ -9,7 +9,6 @@ import {
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import VietNamFlag from "../../assets/images/vietnam.png";
 import useLocales from "../hooks/useLocales";
 
 const ArrowStyle = styled("span")(({ arrow, theme }) => {
@@ -45,7 +44,7 @@ const ArrowStyle = styled("span")(({ arrow, theme }) => {
   };
 
   return {
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("xs")]: {
       zIndex: 1,
       width: SIZE,
       height: SIZE,

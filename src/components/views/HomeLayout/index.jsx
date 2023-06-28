@@ -25,6 +25,7 @@ import * as yup from "yup";
 import { get, first } from "lodash";
 
 import GGMLocationAutocomplete from "../../GGMLocationAutocomplete";
+import useResponsive from "../../hooks/useResponsive";
 
 const defaultValues = {
   origin_location: "",
@@ -39,6 +40,7 @@ const defaultValues = {
 
 const HomeLayout = () => {
   const { t } = useTranslation();
+  const isDesktop = useResponsive("up", "lg");
 
   const hookForm = useForm({
     defaultValues,
@@ -169,21 +171,23 @@ const HomeLayout = () => {
             sx={{
               position: "absolute",
               zIndex: 3,
-              top: "25%",
+              top: isDesktop ? "25%" : "15%",
+              left: "5%",
+              padding: "1em"
             }}
           >
             <Grid container>
               <Grid item xs={12} md={6}>
                 <Stack spacing={3} textAlign="left">
                   <Box>
-                    <Typography variant="h3" letterSpacing={1}>
+                    <Typography variant={isDesktop ? "h3" : "h6"} letterSpacing={1}>
                       {t("common.layoutTitle1")}
                     </Typography>
-                    <Typography variant="h2" letterSpacing={1} fontWeight={600}>
+                    <Typography variant={isDesktop ? "h2" : "h5"} letterSpacing={1} fontWeight={600}>
                       {t("common.layoutTitle2")}
                     </Typography>
                     <Typography
-                      variant="h1"
+                      variant={isDesktop ? "h1" : "h4"}
                       sx={{ color: "orange" }}
                       letterSpacing={1}
                       fontWeight={600}
@@ -266,9 +270,9 @@ const HomeLayout = () => {
           />
         </Box>
       </Box>
-      <Container sx={{ zIndex: 3 }}>
-        <Box mt={-5}>
-          <Card sx={{ p: 2, backgroundColor: "#163c4557", color: "#fff" }}>
+      <Container sx={{ zIndex: 3, mx: isDesktop ? 0 : -2, p: 0 }}>
+        <Box mt={isDesktop ? -5 : -15}>
+          <Card sx={{ p: 2, backgroundColor: "#163c4557", color: "#fff", width: '100%' }}>
             <Box mb={4}>
               <Typography variant="h3" letterSpacing={1}>
                 {t("common.formScheduleTitle")}

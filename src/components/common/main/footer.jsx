@@ -5,8 +5,8 @@ const MainFooter = () => {
   const {t} = useTranslation();
 
   return (
-    <Container sx={{ mt: 10 }}>
-      <Grid container spacing={2}>
+    <Container sx={{ mt: 8 }}>
+      <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           <Stack textAlign="left">
             <Typography variant="h5" my={2}>Ken Kun Family's Car</Typography>

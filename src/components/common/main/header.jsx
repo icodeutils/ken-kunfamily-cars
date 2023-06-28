@@ -3,10 +3,12 @@ import LogoDemo from "../../../assets/images/logo-demo.png";
 import LanguageSelector from "../../langChangeSelector";
 import { useTranslation } from "react-i18next";
 import useOffSetTop from "../../hooks/useOffset";
+import useResponsive from "../../hooks/useResponsive";
 
 const MainHeader = () => {
   const { t } = useTranslation();
   const isOffSet = useOffSetTop(76);
+  const isDesktop = useResponsive("up", "lg");
 
   return (
     <AppBar
@@ -14,7 +16,7 @@ const MainHeader = () => {
         backgroundColor: isOffSet ? "#4a4a4ad6" : "transparent",
         boxShadow: "none",
         color: "#fff",
-        transition: '0.5s ease-in-out'
+        transition: "0.5s ease-in-out",
       }}
     >
       <Box
@@ -27,31 +29,35 @@ const MainHeader = () => {
         }}
       >
         <Box sx={{ display: "inherit" }}>
-          <img src={LogoDemo} width={210} />
+          <img src={LogoDemo} width={isDesktop ? 210 : 140} />
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-between", gap: 4 }}>
-          {[
-            {
-              name: t("common.dayTourText"),
-              path: '/day-tour'
-            },
-            {
-              name: t("common.multipleDayTourText"),
-              path: '/multi-day-tour'
-            },
-          ].map((item) => (
-            <Typography
-              key={item.name}
-              sx={{
-                "&:hover": {
-                  cursor: "pointer",
-                },
-              }}
-            >
-              {item.name}
-            </Typography>
-          ))}
-        </Box>
+        {isDesktop && (
+          <Box
+            sx={{ display: "flex", justifyContent: "space-between", gap: 4 }}
+          >
+            {[
+              {
+                name: t("common.dayTourText"),
+                path: "/day-tour",
+              },
+              {
+                name: t("common.multipleDayTourText"),
+                path: "/multi-day-tour",
+              },
+            ].map((item) => (
+              <Typography
+                key={item.name}
+                sx={{
+                  "&:hover": {
+                    cursor: "pointer",
+                  },
+                }}
+              >
+                {item.name}
+              </Typography>
+            ))}
+          </Box>
+        )}
         <Stack
           direction="row"
           alignItems="center"
