@@ -385,6 +385,11 @@ const HomeLayout = () => {
                       sx={{
                         backgroundColor: "#ffffff",
                         borderRadius: "30px",
+                        "& .MuiOutlinedInput-root": {
+                          "&.Mui-focused fieldset": {
+                            borderColor: "transparent"
+                          }
+                        }
                       }}
                       size="small"
                     />

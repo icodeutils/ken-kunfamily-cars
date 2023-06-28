@@ -281,6 +281,11 @@ const BookingDetail = ({
                 sx={{
                   backgroundColor: "#ffffff",
                   borderRadius: "30px",
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "transparent"
+                    }
+                  }
                 }}
                 fullWidth
                 placeholder={t("common.dialogFullnamePlaceholderText")}
@@ -298,6 +303,11 @@ const BookingDetail = ({
                 sx={{
                   backgroundColor: "#ffffff",
                   borderRadius: "30px",
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "transparent"
+                    }
+                  }
                 }}
                 fullWidth
                 inputProps={{

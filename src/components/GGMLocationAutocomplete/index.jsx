@@ -39,8 +39,10 @@ export default function GGMLocationAutocomplete({ type, hookForm: { register }, 
       sx={{
         backgroundColor: "#ffffff",
         borderRadius: "30px",
-        "& > .Mui-focused": {
-          borderColor: 'red'
+        "& .MuiOutlinedInput-root": {
+          "&.Mui-focused fieldset": {
+            borderColor: "transparent"
+          }
         }
       }}
       placeholder={
