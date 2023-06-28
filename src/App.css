@@ -8,6 +8,7 @@
   flex-direction: column;
   background-color: #242424;
   color: #ffffff;
+  position: relative;
 }
 
 .logo {

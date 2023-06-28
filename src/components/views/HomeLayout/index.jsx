@@ -171,7 +171,7 @@ const HomeLayout = () => {
             sx={{
               position: "absolute",
               zIndex: 3,
-              top: isDesktop ? "25%" : "15%",
+              top: isDesktop ? "10%" : "5%",
               left: "5%",
               padding: "1em"
             }}
@@ -271,7 +271,7 @@ const HomeLayout = () => {
         </Box>
       </Box>
       <Container sx={{ zIndex: 5, mx: isDesktop ? 0 : -2, p: 0 }}>
-        <Box mt={isDesktop ? -5 : -15}>
+        <Box mt={isDesktop ? -5 : -20}>
           <Card sx={{ p: 2, backgroundColor: "#163c4557", color: "#fff", width: '100%' }}>
             <Box mb={4}>
               <Typography variant="h3" letterSpacing={1}>
