@@ -75,7 +75,7 @@ button:focus-visible {
 /* Customize the appearance of the scroll bar */
 /* For webkit-based browsers (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 0px;
 }
 
 /* google map api auto complete customize */

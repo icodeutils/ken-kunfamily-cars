@@ -132,7 +132,6 @@ function LanguageSelector() {
         transformOrigin={{ vertical: "top", horizontal: "right" }}
         PaperProps={{
           sx: {
-            position: "relative",
             p: 1,
             overflow: "inherit",
             mt: 1.5,
