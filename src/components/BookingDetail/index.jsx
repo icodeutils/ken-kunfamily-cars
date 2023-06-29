@@ -260,7 +260,7 @@ const BookingDetail = ({
               <InfoIcon />
             </Tooltip>
           </Box>
-          <Typography>
+          <Typography textAlign="right">
             {journeyFee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} VNĐ
           </Typography>
         </Stack>
