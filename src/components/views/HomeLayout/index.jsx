@@ -171,7 +171,7 @@ const HomeLayout = () => {
             sx={{
               position: "absolute",
               zIndex: 3,
-              top: isDesktop ? "10%" : "5%",
+              top: isDesktop ? "10%" : "7%",
               left: "5%",
               padding: "1em",
             }}
