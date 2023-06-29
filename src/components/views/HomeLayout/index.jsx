@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Button,
@@ -8,22 +7,22 @@ import {
   MenuItem,
   Select,
   Stack,
-  TextField,
-  Typography,
+  Typography
 } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import MainHeader from "../../common/main/header";
-import MainFooter from "../../common/main/footer";
-import BookingDetail from "../../BookingDetail";
+import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import BookingDetail from "../../BookingDetail";
+import MainFooter from "../../common/main/footer";
+import MainHeader from "../../common/main/header";
 
-import moment from "moment";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 
+import { first, get } from "lodash";
 import * as yup from "yup";
-import { get, first } from "lodash";
 
+import DateTimePicker from "../../DateTimePicker";
 import GGMLocationAutocomplete from "../../GGMLocationAutocomplete";
 import useResponsive from "../../hooks/useResponsive";
 
@@ -33,7 +32,8 @@ const defaultValues = {
   waiting_location: "",
   service: "1_CHIEU",
   type_car: "4_CHO",
-  pick_time: moment(new Date()).format("YYYY-MM-DDTHH:mm:ss"),
+  pick_time: new Date(),
+  round_trip: new Date(),
   distance_text: "",
   journey_fee: 0,
 };
@@ -173,17 +173,24 @@ const HomeLayout = () => {
               zIndex: 3,
               top: isDesktop ? "10%" : "5%",
               left: "5%",
-              padding: "1em"
+              padding: "1em",
             }}
           >
             <Grid container>
               <Grid item xs={12} md={6}>
                 <Stack spacing={3} textAlign="left">
                   <Box>
-                    <Typography variant={isDesktop ? "h3" : "h6"} letterSpacing={1}>
+                    <Typography
+                      variant={isDesktop ? "h3" : "h6"}
+                      letterSpacing={1}
+                    >
                       {t("common.layoutTitle1")}
                     </Typography>
-                    <Typography variant={isDesktop ? "h2" : "h5"} letterSpacing={1} fontWeight={600}>
+                    <Typography
+                      variant={isDesktop ? "h2" : "h5"}
+                      letterSpacing={1}
+                      fontWeight={600}
+                    >
                       {t("common.layoutTitle2")}
                     </Typography>
                     <Typography
@@ -197,7 +204,7 @@ const HomeLayout = () => {
                   </Box>
                   <Box>
                     <Typography variant="paragraph">
-                      {t('common.pageIntroduce')}
+                      {t("common.pageIntroduce")}
                     </Typography>
                   </Box>
                   <Box
@@ -218,6 +225,16 @@ const HomeLayout = () => {
                         "&:hover": {
                           backgroundColor: "#000",
                         },
+                      }}
+                      onClick={() => {
+                        Swal.fire({
+                          icon: "info",
+                          text: t("common.comingSoonTitle"),
+                          showConfirmButton: false,
+                          background: '#1f342b',
+                          color: '#fff',
+                          timer: 1000
+                        });
                       }}
                     >
                       {t("common.discover")}
@@ -272,7 +289,14 @@ const HomeLayout = () => {
       </Box>
       <Container sx={{ zIndex: 5, mx: isDesktop ? 0 : -2, p: 0 }}>
         <Box mt={isDesktop ? -5 : -20}>
-          <Card sx={{ p: 2, backgroundColor: "#163c4557", color: "#fff", width: '100%' }}>
+          <Card
+            sx={{
+              p: 2,
+              backgroundColor: "#163c4557",
+              color: "#fff",
+              width: "100%",
+            }}
+          >
             <Box mb={4}>
               <Typography variant="h3" letterSpacing={1}>
                 {t("common.formScheduleTitle")}
@@ -371,31 +395,50 @@ const HomeLayout = () => {
                 <Stack spacing={1} textAlign="left">
                   <Box>{t("common.formTimePickupTitle")}</Box>
                   <Box>
-                    <TextField
-                      {...hookForm.register("pick_time")}
+                    <DateTimePicker
+                      hookForm={hookForm}
                       name="pick_time"
-                      type="datetime-local"
-                      defaultValue={moment(new Date()).format(
-                        "YYYY-MM-DDTHH:mm:ss"
-                      )}
-                      InputLabelProps={{
-                        shrink: false,
-                      }}
-                      fullWidth
+                      label=""
+                      minDateTime={new Date()}
                       sx={{
+                        width: "100%",
                         backgroundColor: "#ffffff",
                         borderRadius: "30px",
-                        "& .MuiOutlinedInput-root": {
-                          "&.Mui-focused fieldset": {
-                            borderColor: "transparent"
-                          }
+                        "& .MuiInputBase-input": {
+                          padding: "9.5px 14px",
+                        },
+                        '& .MuiOutlinedInput-notchedOutline': {
+                          borderColor: 'transparent !important'
                         }
                       }}
-                      size="small"
                     />
                   </Box>
                 </Stack>
               </Grid>
+              {/* <Grid item xs={12} md={4}>
+                <Stack spacing={1} textAlign="left">
+                  <Box>{t("common.formRoundTripTitle")}</Box>
+                  <Box>
+                    <DateTimePicker
+                      hookForm={hookForm}
+                      name="round_trip"
+                      label=""
+                      minDateTime={new Date()}
+                      sx={{
+                        width: "100%",
+                        backgroundColor: "#ffffff",
+                        borderRadius: "30px",
+                        "& .MuiInputBase-input": {
+                          padding: "9.5px 14px",
+                        },
+                        '& .MuiOutlinedInput-notchedOutline': {
+                          borderColor: 'transparent !important'
+                        }
+                      }}
+                    />
+                  </Box>
+                </Stack>
+              </Grid> */}
             </Grid>
             <Box mt={5} mb={2}>
               <Button

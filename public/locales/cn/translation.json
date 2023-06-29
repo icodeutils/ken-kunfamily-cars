@@ -37,6 +37,8 @@
     "dialogBookingBtn": "设置时间表",
     "dialogBookingSuccessText": "预订成功。谢谢您，我们会尽快与您联系",
     "dialogRequiredFullNameText": "请输入您的名字和姓氏。",
-    "dialogRequiredPhoneNumberText": "请输入电话号码信息。"
+    "dialogRequiredPhoneNumberText": "请输入电话号码信息。",
+    "formRoundTripTitle": "往返时间",
+    "comingSoonTitle": "即将推出!"
   }
 }

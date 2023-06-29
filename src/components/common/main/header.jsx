@@ -4,6 +4,7 @@ import LanguageSelector from "../../langChangeSelector";
 import { useTranslation } from "react-i18next";
 import useOffSetTop from "../../hooks/useOffset";
 import useResponsive from "../../hooks/useResponsive";
+import Swal from "sweetalert2";
 
 const MainHeader = () => {
   const { t } = useTranslation();
@@ -52,6 +53,16 @@ const MainHeader = () => {
                     cursor: "pointer",
                   },
                 }}
+                onClick={() => {
+                  Swal.fire({
+                    icon: "info",
+                    text: t("common.comingSoonTitle"),
+                    showConfirmButton: false,
+                    background: "#1f342b",
+                    color: "#fff",
+                    timer: 1000,
+                  });
+                }}
               >
                 {item.name}
               </Typography>
@@ -76,6 +87,16 @@ const MainHeader = () => {
               "&:hover": {
                 backgroundColor: "#000",
               },
+            }}
+            onClick={() => {
+              Swal.fire({
+                icon: "info",
+                text: t("common.comingSoonTitle"),
+                showConfirmButton: false,
+                background: "#1f342b",
+                color: "#fff",
+                timer: 1000,
+              });
             }}
           >
             {t("common.signUpBtn")}

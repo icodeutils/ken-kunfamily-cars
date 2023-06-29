@@ -38,6 +38,8 @@
     "dialogBookingBtn": "Đặt lịch trình",
     "dialogBookingSuccessText": "Đặt xe thành công.Cảm ơn quý khách, chúng tôi sẽ liên hệ bạn ngay!",
     "dialogRequiredFullNameText": "Vui lòng nhập thông tin họ tên.",
-    "dialogRequiredPhoneNumberText": "Vui lòng nhập thông tin số điện thoại."
+    "dialogRequiredPhoneNumberText": "Vui lòng nhập thông tin số điện thoại.",
+    "formRoundTripTitle": "Thời gian khứ hồi",
+    "comingSoonTitle": "Sắp ra mắt!"
   }
 }

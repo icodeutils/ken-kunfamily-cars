@@ -37,6 +37,8 @@
     "dialogBookingBtn": "Booking a schedule",
     "dialogBookingSuccessText": "Successful booking. Thank you, we will contact you shortly!",
     "dialogRequiredFullNameText": "Please enter your first and last name.",
-    "dialogRequiredPhoneNumberText": "Please enter phone number information."
+    "dialogRequiredPhoneNumberText": "Please enter phone number information.",
+    "formRoundTripTitle": "Round-trip time",
+    "comingSoonTitle": "Coming soon!"
   }
 }
