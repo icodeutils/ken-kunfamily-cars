@@ -113,7 +113,7 @@ const HomeLayout = () => {
           hookForm.setValue("journey_fee", round(fee / 1000));
           break;
         case "2_CHIEU":
-          const dayToTravel = moment(hookForm.watch('round_trip')).diff(moment(hookForm.watch('pick_time')), 'days');
+          const dayToTravel = 1 + moment(hookForm.watch('round_trip')).diff(moment(hookForm.watch('pick_time')), 'days');
           console.log(totalDistance, dayToTravel)
           if(hookForm.watch('type_car') === '4_CHO') {
             fee = dayToTravel * 1100000 + totalDistance * 3 + (dayToTravel - 1) * 350000;
