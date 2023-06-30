@@ -7,7 +7,7 @@ import {
   MenuItem,
   Select,
   Stack,
-  Typography
+  Typography,
 } from "@mui/material";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -15,7 +15,6 @@ import { useTranslation } from "react-i18next";
 import BookingDetail from "../../BookingDetail";
 import MainFooter from "../../common/main/footer";
 import MainHeader from "../../common/main/header";
-
 
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -26,6 +25,9 @@ import DateTimePicker from "../../DateTimePicker";
 import GGMLocationAutocomplete from "../../GGMLocationAutocomplete";
 import useResponsive from "../../hooks/useResponsive";
 
+import moment from 'moment';
+
+import { round } from "lodash";
 const defaultValues = {
   origin_location: "",
   destination_location: "",
@@ -33,7 +35,7 @@ const defaultValues = {
   service: "1_CHIEU",
   type_car: "4_CHO",
   pick_time: new Date(),
-  round_trip: new Date(),
+  round_trip: new Date().setDate(new Date().getDate() + 1),
   distance_text: "",
   journey_fee: 0,
 };
@@ -107,10 +109,21 @@ const HomeLayout = () => {
       console.log("final fee: ", fee);
       switch (hookForm.watch("service")) {
         case "1_CHIEU":
-          hookForm.setValue("journey_fee", fee / 1000);
+          hookForm.setValue("journey_fee", round(fee / 1000));
           break;
         case "2_CHIEU":
-          hookForm.setValue("journey_fee", (fee * 1.6) / 1000);
+          const dayToTravel = moment(hookForm.watch('round_trip')).diff(moment(hookForm.watch('pick_time')), 'days');
+          console.log(totalDistance, dayToTravel)
+          if(hookForm.watch('type_car') === '4_CHO') {
+            fee = dayToTravel * 1100000 + totalDistance * 3 + (dayToTravel - 1) * 350000;
+            console.log('fee', fee);
+          }
+
+          if(hookForm.watch('type_car') === '7_CHO') {
+            fee = dayToTravel * 1300000 + totalDistance * 3 + (dayToTravel - 1) * 350000;
+          }
+
+          hookForm.setValue("journey_fee", (round(fee * 1.1)));
       }
 
       hookForm.setValue(
@@ -231,9 +244,9 @@ const HomeLayout = () => {
                           icon: "info",
                           text: t("common.comingSoonTitle"),
                           showConfirmButton: false,
-                          background: '#1f342b',
-                          color: '#fff',
-                          timer: 1000
+                          background: "#1f342b",
+                          color: "#fff",
+                          timer: 1000,
                         });
                       }}
                     >
@@ -339,7 +352,11 @@ const HomeLayout = () => {
                   </Box>
                 </Stack>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                item
+                xs={12}
+                md={hookForm.watch("service") === "2_CHIEU" ? 3 : 4}
+              >
                 <Stack spacing={1} textAlign="left">
                   <Box>{t("common.formServiceTypeTitle")}</Box>
                   <Box>
@@ -352,7 +369,7 @@ const HomeLayout = () => {
                         backgroundColor: "#ffffff",
                         borderRadius: "30px",
                       }}
-                      defaultValue="2_CHIEU"
+                      defaultValue="1_CHIEU"
                       placeholder={t("common.formServiceTypeTitle")}
                     >
                       <MenuItem value="1_CHIEU">
@@ -365,7 +382,11 @@ const HomeLayout = () => {
                   </Box>
                 </Stack>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                item
+                xs={12}
+                md={hookForm.watch("service") === "2_CHIEU" ? 3 : 4}
+              >
                 <Stack spacing={1} textAlign="left">
                   <Box>{t("common.formTransportTypeTitle")}</Box>
                   <Box>
@@ -391,7 +412,16 @@ const HomeLayout = () => {
                   </Box>
                 </Stack>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                item
+                xs={12}
+                md={hookForm.watch("service") === "2_CHIEU" ? 6 : 4}
+                sx={{
+                  display: hookForm.watch("service") === "2_CHIEU" ? "flex" : "block",
+                  flexDirection: isDesktop ? 'row' : 'column',
+                  gap: 1
+                }}
+              >
                 <Stack spacing={1} textAlign="left">
                   <Box>{t("common.formTimePickupTitle")}</Box>
                   <Box>
@@ -407,13 +437,37 @@ const HomeLayout = () => {
                         "& .MuiInputBase-input": {
                           padding: "9.5px 14px",
                         },
-                        '& .MuiOutlinedInput-notchedOutline': {
-                          borderColor: 'transparent !important'
-                        }
+                        "& .MuiOutlinedInput-notchedOutline": {
+                          borderColor: "transparent !important",
+                        },
                       }}
                     />
                   </Box>
                 </Stack>
+                {hookForm.watch("service") === "2_CHIEU" && (
+                  <Stack spacing={1} textAlign="left">
+                    <Box>{t("common.formRoundTripTitle")}</Box>
+                    <Box>
+                      <DateTimePicker
+                        hookForm={hookForm}
+                        name="round_trip"
+                        label=""
+                        minDateTime={new Date()}
+                        sx={{
+                          width: "100%",
+                          backgroundColor: "#ffffff",
+                          borderRadius: "30px",
+                          "& .MuiInputBase-input": {
+                            padding: "9.5px 14px",
+                          },
+                          "& .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "transparent !important",
+                          },
+                        }}
+                      />
+                    </Box>
+                  </Stack>
+                )}
               </Grid>
               {/* <Grid item xs={12} md={4}>
                 <Stack spacing={1} textAlign="left">
