@@ -39,6 +39,6 @@
     "dialogRequiredFullNameText": "请输入您的名字和姓氏。",
     "dialogRequiredPhoneNumberText": "请输入电话号码信息。",
     "formRoundTripTitle": "往返时间",
-    "comingSoonTitle": "即将推出!"
+    "comingSoonTitle": "即将推出。目前系统仅支持预订功能。"
   }
 }

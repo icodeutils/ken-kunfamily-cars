@@ -39,6 +39,6 @@
     "dialogRequiredFullNameText": "Please enter your first and last name.",
     "dialogRequiredPhoneNumberText": "Please enter phone number information.",
     "formRoundTripTitle": "Round-trip time",
-    "comingSoonTitle": "Coming soon!"
+    "comingSoonTitle": "Coming soon. Currently the system only supports booking feature."
   }
 }
