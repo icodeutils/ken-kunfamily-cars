@@ -566,6 +566,7 @@ const HomeLayout = () => {
       {open && (
         <BookingDetail
           pickTime={hookForm.watch("pick_time")}
+          roundTrip={hookForm.watch('round_trip')}
           originLocation={hookForm.watch("origin_location")}
           waitingLocation={hookForm.watch("waiting_location")}
           destinationLocation={hookForm.watch("destination_location")}

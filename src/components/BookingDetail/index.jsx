@@ -41,6 +41,7 @@ const SERVICE_CARS = {
 
 const BookingDetail = ({
   pickTime,
+  roundTrip,
   originLocation,
   waitingLocation,
   destinationLocation,
@@ -94,6 +95,7 @@ const BookingDetail = ({
               destinationLocation,
               waitingLocation,
               pickTime,
+              roundTrip,
               journeyFee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
             ],
           ]),
