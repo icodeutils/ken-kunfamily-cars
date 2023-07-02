@@ -286,6 +286,7 @@ const HomeLayout = () => {
               objectFit: "cover",
               opacity: "0.75",
             }}
+            disablePictureInPicture 
           ></video>
 
           <Box
