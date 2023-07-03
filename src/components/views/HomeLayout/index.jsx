@@ -124,7 +124,7 @@ const HomeLayout = () => {
             fee = dayToTravel * 1300000 + totalDistance * 3 + (dayToTravel - 1) * 350000;
           }
 
-          hookForm.setValue("journey_fee", (round(fee * 1.1)));
+          hookForm.setValue("journey_fee", (round(fee * 1.1 + totalDistance * 3)));
       }
 
       hookForm.setValue(
